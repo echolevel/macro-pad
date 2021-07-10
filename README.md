@@ -1,6 +1,6 @@
 # 3x3 macro-pad thing that DOESN'T always appear as a mass storage device
 
-Based heavily on adafruit's RPi Pico HID code examples (which are included as they're MIT licensed - hopefully that's ok), my main tweak is a custom boot.py which causes mass storage mode and USB MIDI mode to be disabled by default. 
+Based heavily on adafruit's RPi Pico HID code examples and library (which are included as they're MIT licensed - hopefully that's ok), my main tweak is a custom boot.py which causes mass storage mode and USB MIDI mode to be disabled by default. 
 
 This means an Explorer/Finder window won't pop up every time you connect it UNLESS you're holding down one of the pad's keys - in my case the first key in the 3x3 grid, connected to pin GP0.
 
