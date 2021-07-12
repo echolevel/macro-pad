@@ -7,8 +7,9 @@ startupkey.pull = digitalio.Pull.UP
 
 
 # If the top left button isn't held down on startup, disable
-# mass storage and USB MIDI modes
+# mass storage, USB MIDI, and CDC (serial) modes
 if startupkey.value:    
     storage.disable_usb_drive()
     usb_midi.disable()
+    usb_cdc.disable()
     
