@@ -1,4 +1,4 @@
-import storage, usb_cdc
+import storage, usb_cdc, usb_midi
 import board, digitalio
 
 startupkey = digitalio.DigitalInOut(board.GP0)
@@ -12,4 +12,6 @@ if startupkey.value:
     storage.disable_usb_drive()
     usb_midi.disable()
     usb_cdc.disable()
+    usb_hid.enable((usb_hid.Device.KEYBOARD, usb_hid.Device.CONSUMER_CONTROL))
+    
     

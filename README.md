@@ -8,6 +8,9 @@ This prevents you from being locked out, and is particularly handy for when you 
 
 If I remember correctly, you'll need to flash the Pico with the adafruit CircuitPython firmware (which involves dragging and dropping the UF2 file onto the Pico's mass storage root), then add the lib directory and contents, and the boot.py and code.py files. Stuff in boot.py won't take effect until you restart the device (unplug and plug it in again) since that script is only run once before USB modes are conditionally set.
 
+NOTE: sometimes after booting Windows, the pad won't work until it's been unplugged and plugged in again. This...
+defeats the point of the project, but I'll keep trying to figure it out. Meanwhile, you can just not use the boot.py - either don't add it to the Pico or delete it if it's there. Everything should work on startup.
+
 ![my pad](./macropad.jpg)
 
 For my pad, I used STL files from [sepro on Thingiverse](https://www.thingiverse.com/thing:4816077) which are a mashup of the VOID9 Macropad and the Pico Armour case.

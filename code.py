@@ -13,9 +13,11 @@ from adafruit_hid.consumer_control_code import ConsumerControlCode
  
 print("---Pico Pad Keyboard---")
  
+time.sleep(1) # avoid a race condition on some systems 
+ 
 kbd = Keyboard(usb_hid.devices)
 cc = ConsumerControl(usb_hid.devices)
- 
+
 # list of pins to use (skipping GP15 on Pico because it's funky)
 pins = [
     board.GP0,
@@ -47,13 +49,15 @@ keymap = {
 switches = [0, 1, 2, 3, 4, 5, 6,
             7, 8]
  
+ 
+ 
 for i in range(9):
     switches[i] = DigitalInOut(pins[i])
     switches[i].direction = Direction.INPUT
     switches[i].pull = Pull.UP
  
 switch_state = [0, 0, 0, 0, 0, 0, 0, 0, 0]
- 
+
 while True:
     for button in range(9):
         if switch_state[button] == 0:
